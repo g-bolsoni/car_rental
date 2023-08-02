@@ -25,12 +25,16 @@ class CategoriesRepository implements ICategoriesRepository
 
         this.categories.push(category);
     }
+    
 
     list() : Category[]
     {
+        console.log(this.categories);
+        
+        
         return this.categories;
     }
-
+ 
     findByName(name: string): Category
     { 
         const verifyCategoryExits = this.categories.find((category) => category.name.toLowerCase() === name.toLowerCase());
