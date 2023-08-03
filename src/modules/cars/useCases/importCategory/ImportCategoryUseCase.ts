@@ -25,6 +25,7 @@ class ImportCategoryUseCase {
             categories.push({name, description});
         })
         .on('end', () => { // Espera executar todo o processo para inserir os dados no array
+            fs.promises.unlink(file.path);
             resolve(categories);
         })
         .on('error', (err) => {
